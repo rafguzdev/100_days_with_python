@@ -19,7 +19,7 @@ weeks = ( 90 - age ) * 52
 months = ( 90 - age ) * 12
 print(f'You have {days} days, {weeks} weeks and {months} months left.')
 
-# Task 4 - Typ calculator 
+# Task 4 - Tip calculator 
 print('Welcome to the tip calculator')
 bill = float(input('What was the total bill?: $'))
 tip = int(input('What percentage tip would you like to give? 10, 12 or 15?: '))

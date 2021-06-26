@@ -29,6 +29,10 @@ while True:
     else:
         res = check_resources(task)
         if type(res) == bool:
-            pass
+            ingredients = menu[task]['ingredients']
+            for ingredient, value in ingredients.items():
+                resources[ingredient] -= value
+            money += menu[task]['cost']
+            print(f'This is your {task}, Enjoy!')
         else:
             print(res)

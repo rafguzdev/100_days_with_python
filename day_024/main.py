@@ -1,56 +1,18 @@
-from turtle import Screen
-from snake import Snake
-from food import Food
-from scoreboard import Scoreboard
-import time
+# load names
+names = []
+with open('Input/Names/invited_names.txt') as reader:
+    for line in reader.readlines():
+        names.append(line.strip())
 
-# initialize window
-screen = Screen()
-screen.setup( width = 600, height = 600)
-screen.bgcolor('black')
-screen.title('My snake game')
-screen.tracer(0)
+# load starting letter
+letter = ''
+with open('Input/Letters/starting_letter.docx') as reader:
+    # for line in reader.readlines():
+    letter = reader.readlines()
 
-# initialize 
-snake = Snake()
-food = Food()
-scoreboard = Scoreboard()
-
-# update screen after load all components2
-screen.update()
-
-# set keyboard actions
-screen.listen()
-screen.onkey(snake.move_up, 'w')
-screen.onkey(snake.move_dw, 's')
-screen.onkey(snake.move_lt, 'a')
-screen.onkey(snake.move_rt, 'd')
-
-# game loop
-game_is_on = True
-while game_is_on:
-    screen.update()
-    time.sleep(0.1)
-    snake.go()
-
-    # collisions
-    if snake.head.distance(food) < 15:
-        scoreboard.add()
-        snake.grow()
-        food.refresh()
-    
-    # detect collisions with wall
-    if ( snake.head.xcor() > 280 or snake.head.xcor() < -300 or
-        snake.head.ycor() > 300 or snake.head.ycor() < -280 ):
-        game_is_on = False
-        scoreboard.game_over()
-
-    # detect collisions with tail
-    for idx, segment in enumerate(snake.snake):
-        if idx > 1:
-            if snake.head.distance(segment) < 5:
-                game_is_on = False
-                scoreboard.game_over()
-    
-
-screen.exitonclick()
+if len(names) > 0 and len(letter) > 0:
+    for name in names:
+        line = f'Dear {name},'
+        with open(f'Output/letter_for_{name}.docx', 'w') as f:
+            letter[0] = line
+            f.writelines(letter)

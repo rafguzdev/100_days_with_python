@@ -11,6 +11,7 @@ def calc():
     km = miles * 1.6
     exit_calc.config(text=str(km))
 
+#declatations 
 entry = tk.Entry(width=10)
 entry_disc = tk.Label(text='Miles')
 
@@ -20,10 +21,7 @@ exit_unit = tk.Label(text='Km')
 
 button = tk.Button(text='Calculate', command=calc)
 
-# myLabel = tk.Label(text='sone label', font=('Arial', 14))
-
-# entry = tk.Entry(width=10)
-    
+#positions 
 entry.grid(column=1, row=0)
 entry_disc.grid(column=2, row=0)
 

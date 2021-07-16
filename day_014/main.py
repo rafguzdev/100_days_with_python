@@ -25,4 +25,3 @@ while True:
         print(art.logo)
         print(f"Sorry, that's wrong. Final score {score}")
         break
-

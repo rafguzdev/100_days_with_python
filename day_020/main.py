@@ -42,9 +42,4 @@ while True:
     screen.update()
     time.sleep(0.1)
 
-
-
-
-
-
 screen.exitonclick()

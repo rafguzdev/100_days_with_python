@@ -55,5 +55,3 @@ while not fail:
     if computer_score > player_score:
         print('komputer - wygral')
         break
-
-    

@@ -15,6 +15,3 @@ while True:
     if '_' not in hide_word:
         print('you win')
         break
-
-
-

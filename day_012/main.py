@@ -38,3 +38,4 @@ while True:
         break
     else:
         print(f'You have {max_attempts - attempts} remaining to guess the number')
+    

@@ -56,8 +56,5 @@ while game_is_on:
             scoreboard.game_over()
     
     time.sleep(0.05)
-    # snake.go()
-
-
 
 screen.exitonclick()
